@@ -1,94 +1,93 @@
-\name{tidy_data}
-\alias{tidy_data}
-\docType{data}
-\title{
-%%   ~~ Codebook for tidy_data.txt ~~
-}
-\description{
-%%  ~~ This dataset provides the mean measurement of 30 subjects for 6 activities (walking, walking upstairs, walking downstairs, sitting, standing, laying).  The measurements had been normalized and bounded within [-1,1], and were captured using the accelerometer (Acc) and gyroscope (Gyro) in the smartphone (Samsung Galaxy S II) on each subject's waist.  The prefix 't' denotes time.  '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.  ~~
+## Codebook for tidy_data.txt
 
-%% ~~ Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). The magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). ~~ 
+This dataset provides the **mean** measurement for each of 30 subjects for each of the 6 activities (walking, walking upstairs, walking downstairs, sitting, standing, laying).  
 
-%% ~~ Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (The prefix 'f' denotes frequency domain signals).   The units used for the accelerations (total and body) are 'g's (gravity of earth -> 9.80665 m/seg2).  The gyroscope units are rad/seg.~~ 
-}
-\usage{data("tidy_data")}
-\format{
-  A data frame with 180 observations on the following 68 variables.
-  \describe{
-    \item{\code{activity}}{a factor with 6 levels \code{laying} \code{sitting} \code{standing} \code{walking} \code{walking downstairs} \code{walking upstairs}}
-    \item{\code{subject}}{a numeric vector}{1 to 30}
-    \item{\code{tBodyAccMeanX}}{a numeric vector}
-    \item{\code{tBodyAccMeanY}}{a numeric vector}
-    \item{\code{tBodyAccMeanZ}}{a numeric vector}
-    \item{\code{tGravityAccMeanX}}{a numeric vector}
-    \item{\code{tGravityAccMeanY}}{a numeric vector}
-    \item{\code{tGravityAccMeanZ}}{a numeric vector}
-    \item{\code{tBodyAccJerkMeanX}}{a numeric vector}
-    \item{\code{tBodyAccJerkMeanY}}{a numeric vector}
-    \item{\code{tBodyAccJerkMeanZ}}{a numeric vector}
-    \item{\code{tBodyGyroMeanX}}{a numeric vector}
-    \item{\code{tBodyGyroMeanY}}{a numeric vector}
-    \item{\code{tBodyGyroMeanZ}}{a numeric vector}
-    \item{\code{tBodyGyroJerkMeanX}}{a numeric vector}
-    \item{\code{tBodyGyroJerkMeanY}}{a numeric vector}
-    \item{\code{tBodyGyroJerkMeanZ}}{a numeric vector}
-    \item{\code{tBodyAccMagMean}}{a numeric vector}
-    \item{\code{tGravityAccMagMean}}{a numeric vector}
-    \item{\code{tBodyAccJerkMagMean}}{a numeric vector}
-    \item{\code{tBodyGyroMagMean}}{a numeric vector}
-    \item{\code{tBodyGyroJerkMagMean}}{a numeric vector}
-    \item{\code{fBodyAccMeanX}}{a numeric vector}
-    \item{\code{fBodyAccMeanY}}{a numeric vector}
-    \item{\code{fBodyAccMeanZ}}{a numeric vector}
-    \item{\code{fBodyAccJerkMeanX}}{a numeric vector}
-    \item{\code{fBodyAccJerkMeanY}}{a numeric vector}
-    \item{\code{fBodyAccJerkMeanZ}}{a numeric vector}
-    \item{\code{fBodyGyroMeanX}}{a numeric vector}
-    \item{\code{fBodyGyroMeanY}}{a numeric vector}
-    \item{\code{fBodyGyroMeanZ}}{a numeric vector}
-    \item{\code{fBodyAccMagMean}}{a numeric vector}
-    \item{\code{fBodyAccJerkMagMean}}{a numeric vector}
-    \item{\code{fBodyGyroMagMean}}{a numeric vector}
-    \item{\code{fBodyGyroJerkMagMean}}{a numeric vector}
-    \item{\code{tBodyAccStdX}}{a numeric vector}
-    \item{\code{tBodyAccStdY}}{a numeric vector}
-    \item{\code{tBodyAccStdZ}}{a numeric vector}
-    \item{\code{tGravityAccStdX}}{a numeric vector}
-    \item{\code{tGravityAccStdY}}{a numeric vector}
-    \item{\code{tGravityAccStdZ}}{a numeric vector}
-    \item{\code{tBodyAccJerkStdX}}{a numeric vector}
-    \item{\code{tBodyAccJerkStdY}}{a numeric vector}
-    \item{\code{tBodyAccJerkStdZ}}{a numeric vector}
-    \item{\code{tBodyGyroStdX}}{a numeric vector}
-    \item{\code{tBodyGyroStdY}}{a numeric vector}
-    \item{\code{tBodyGyroStdZ}}{a numeric vector}
-    \item{\code{tBodyGyroJerkStdX}}{a numeric vector}
-    \item{\code{tBodyGyroJerkStdY}}{a numeric vector}
-    \item{\code{tBodyGyroJerkStdZ}}{a numeric vector}
-    \item{\code{tBodyAccMagStd}}{a numeric vector}
-    \item{\code{tGravityAccMagStd}}{a numeric vector}
-    \item{\code{tBodyAccJerkMagStd}}{a numeric vector}
-    \item{\code{tBodyGyroMagStd}}{a numeric vector}
-    \item{\code{tBodyGyroJerkMagStd}}{a numeric vector}
-    \item{\code{fBodyAccStdX}}{a numeric vector}
-    \item{\code{fBodyAccStdY}}{a numeric vector}
-    \item{\code{fBodyAccStdZ}}{a numeric vector}
-    \item{\code{fBodyAccJerkStdX}}{a numeric vector}
-    \item{\code{fBodyAccJerkStdY}}{a numeric vector}
-    \item{\code{fBodyAccJerkStdZ}}{a numeric vector}
-    \item{\code{fBodyGyroStdX}}{a numeric vector}
-    \item{\code{fBodyGyroStdY}}{a numeric vector}
-    \item{\code{fBodyGyroStdZ}}{a numeric vector}
-    \item{\code{fBodyAccMagStd}}{a numeric vector}
-    \item{\code{fBodyAccJerkMagStd}}{a numeric vector}
-    \item{\code{fBodyGyroMagStd}}{a numeric vector}
-    \item{\code{fBodyGyroJerkMag.Std}}{a numeric vector}
-  }
-}
-\source{
-%%  ~~  Data is obtained from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip  ~~
-}
-\references{
-%%  ~~ A full description of the obtained data is available at http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones ~~
-}
+The original datasets were downloaded from 
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+A full description of the obtained data is available at http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+The measurements in the original datasets had been **normalized and bounded within [-1,1]**, and were captured using the accelerometer (Acc) and gyroscope (Gyro) in the smartphone (Samsung Galaxy S II) on each subject's waist.  *The prefix 't' denotes time.  'XYZ' is used to denote 3-axial signals in the X, Y and Z directions.*
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). The magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. *The prefix 'f' denotes frequency.*   
+
+The units used for the accelerations (total and body) are 'g's (gravity of earth -> 9.80665 m/seg2).  The gyroscope units are rad/seg.
+
+Mean refers to mean.
+Std refers to standard deviation.
+
+tidy_data.txt is a data frame with 180 observations on the following 68 variables:
+
+1. activity - laying, sitting, standing, walking, walking downstairs, walking upstairs.
+2. subject - a numeric variable of values 1 to 30
+3. tBodyAccMeanX - a numeric variable that gives the mean of tBodyAccMeanX for each activity and each subject
+4. tBodyAccMeanY - a numeric variable that gives the mean of tBodyAccMeanY for each activity and each subject
+5. tBodyAccMeanZ - a numeric variable that gives the mean of tBodyAccMeanZ for each activity and each subject
+6. tGravityAccMeanX - a numeric variable that gives the mean of tGravityAccMeanX for each activity and each subject
+7. tGravityAccMeanY - a numeric variable that gives the mean of tGravityAccMeanY for each activity and each subject
+8. tGravityAccMeanZ - a numeric variable that gives the mean of tGravityAccMeanZ for each activity and each subject
+9. tBodyAccJerkMeanX - a numeric variable that gives the mean of tBodyAccJerkMeanX for each activity and each subject
+10. tBodyAccJerkMeanY - a numeric variable that gives the mean of tBodyAccJerkMeanY for each activity and each subject
+11. tBodyAccJerkMeanZ - a numeric variable that gives the mean of tBodyAccJerkMeanZ for each activity and each subject
+12. tBodyGyroMeanX - a numeric variable that gives the mean of tBodyGyroMeanX for each activity and each subject
+13. tBodyGyroMeanY - a numeric variable that gives the mean of tBodyGyroMeanY for each activity and each subject
+14. tBodyGyroMeanZ - a numeric variable that gives the mean of tBodyGyroMeanZ for each activity and each subject
+15. tBodyGyroJerkMeanX - a numeric variable that gives the mean of tBodyGyroJerkMeanX for each activity and each subject
+16. tBodyGyroJerkMeanY - a numeric variable that gives the mean of tBodyGyroJerkMeanY for each activity and each subject
+17. tBodyGyroJerkMeanZ - a numeric variable that gives the mean of tBodyGyroJerkMeanZ for each activity and each subject
+18. tBodyAccMagMean - a numeric variable that gives the mean of tBodyAccMagMean for each activity and each subject
+19. tGravityAccMagMean - a numeric variable that gives the mean of tGravityAccMagMean for each activity and each subject
+20. tBodyAccJerkMagMean - a numeric variable that gives the mean of tBodyAccJerkMagMean for each activity and each subject
+21. tBodyGyroMagMean - a numeric variable that gives the mean of tBodyGyroMagMean for each activity and each subject
+22. tBodyGyroJerkMagMean - a numeric variable that gives the mean of tBodyGyroJerkMagMean for each activity and each subject
+23. fBodyAccMeanX - a numeric variable that gives the mean of fBodyAccMeanX for each activity and each subject
+24. fBodyAccMeanY - a numeric variable that gives the mean of fBodyAccMeanY for each activity and each subject
+25. fBodyAccMeanZ - a numeric variable that gives the mean of fBodyAccMeanZ for each activity and each subject
+26. fBodyAccJerkMeanX - a numeric variable that gives the mean of fBodyAccJerkMeanX for each activity and each subject
+27. fBodyAccJerkMeanY - a numeric variable that gives the mean of fBodyAccJerkMeanY for each activity and each subject
+28. fBodyAccJerkMeanZ - a numeric variable that gives the mean of fBodyAccJerkMeanZ for each activity and each subject
+29. fBodyGyroMeanX - a numeric variable that gives the mean of fBodyGyroMeanX for each activity and each subject
+30. fBodyGyroMeanY - a numeric variable that gives the mean of fBodyGyroMeanY for each activity and each subject
+31. fBodyGyroMeanZ - a numeric variable that gives the mean of fBodyGyroMeanZ for each activity and each subject
+32. fBodyAccMagMean - a numeric variable that gives the mean of fBodyAccMagMean for each activity and each subject
+33. fBodyAccJerkMagMean - a numeric variable that gives the mean of fBodyAccJerkMagMean for each activity and each subject
+34. fBodyGyroMagMean - a numeric variable that gives the mean of fBodyGyroMagMean for each activity and each subject
+35. fBodyGyroJerkMagMean - a numeric variable that gives the mean of fBodyGyroJerkMagMean for each activity and each subject
+36. tBodyAccStdX - a numeric variable that gives the mean of tBodyAccStdX for each activity and each subject
+37. tBodyAccStdY - a numeric variable that gives the mean of tBodyAccStdY for each activity and each subject
+38. tBodyAccStdZ - a numeric variable that gives the mean of tBodyAccStdZ for each activity and each subject
+39. tGravityAccStdX - a numeric variable that gives the mean of tGravityAccStdX for each activity and each subject
+40. tGravityAccStdY - a numeric variable that gives the mean of tGravityAccStdY for each activity and each subject
+41. tGravityAccStdZ - a numeric variable that gives the mean of tGravityAccStdZ for each activity and each subject
+42. tBodyAccJerkStdX - a numeric variable that gives the mean of tBodyAccJerkStdX for each activity and each subject
+43. tBodyAccJerkStdY - a numeric variable that gives the mean of tBodyAccJerkStdY for each activity and each subject
+44. tBodyAccJerkStdZ - a numeric variable that gives the mean of tBodyAccJerkStdZ for each activity and each subject
+45. tBodyGyroStdX - a numeric variable that gives the mean of tBodyGyroStdX for each activity and each subject
+46. tBodyGyroStdY - a numeric variable that gives the mean of tBodyGyroStdY for each activity and each subject
+47. tBodyGyroStdZ - a numeric variable that gives the mean of tBodyGyroStdZ for each activity and each subject
+48. tBodyGyroJerkStdX - a numeric variable that gives the mean of tBodyGyroJerkStdX for each activity and each subject
+49. tBodyGyroJerkStdY - a numeric variable that gives the mean of tBodyGyroJerkStdY for each activity and each subject
+50. tBodyGyroJerkStdZ - a numeric variable that gives the mean of tBodyGyroJerkStdZ for each activity and each subject
+51. tBodyAccMagStd - a numeric variable that gives the mean of tBodyAccMagStd for each activity and each subject
+52. tGravityAccMagStd - a numeric variable that gives the mean of tGravityAccMagStd for each activity and each subject
+53. tBodyAccJerkMagStd - a numeric variable that gives the mean of tBodyAccJerkMagStd for each activity and each subject
+54. tBodyGyroMagStd - a numeric variable that gives the mean of tBodyGyroMagStd for each activity and each subject
+55. tBodyGyroJerkMagStd - a numeric variable that gives the mean of tBodyGyroJerkMagStd for each activity and each subject
+56. fBodyAccStdX - a numeric variable that gives the mean of fBodyAccStdX for each activity and each subject
+57. fBodyAccStdY - a numeric variable that gives the mean of fBodyAccStdY for each activity and each subject
+58. fBodyAccStdZ - a numeric variable that gives the mean of fBodyAccStdZ for each activity and each subject
+59. fBodyAccJerkStdX - a numeric variable that gives the mean of fBodyAccJerkStdX for each activity and each subject
+60. fBodyAccJerkStdY - a numeric variable that gives the mean of fBodyAccJerkStdY for each activity and each subject
+61. fBodyAccJerkStdZ - a numeric variable that gives the mean of fBodyAccJerkStdZ for each activity and each subject
+62. fBodyGyroStdX - a numeric variable that gives the mean of fBodyGyroStdX for each activity and each subject
+63. fBodyGyroStdY - a numeric variable that gives the mean of fBodyGyroStdY for each activity and each subject
+64. fBodyGyroStdZ - a numeric variable that gives the mean of fBodyGyroStdZ for each activity and each subject
+65. fBodyAccMagStd - a numeric variable that gives the mean of fBodyAccMagStd for each activity and each subject
+66. fBodyAccJerkMagStd - a numeric variable that gives the mean of fBodyAccJerkMagStd for each activity and each subject
+67. fBodyGyroMagStd - a numeric variable that gives the mean of fBodyGyroMagStd for each activity and each subject
+68. fBodyGyroJerkMagStd - a numeric variable that gives the mean of fBodyGyroJerkMagStd for each activity and each subject
+
+
 

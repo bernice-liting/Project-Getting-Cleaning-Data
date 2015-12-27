@@ -81,7 +81,7 @@ colnames(data_small) <- c("activity", "subject", "tBodyAccMeanX", "tBodyAccMeanY
                           "fBodyAccStdY", "fBodyAccStdZ", "fBodyAccJerkStdX",       
                           "fBodyAccJerkStdY", "fBodyAccJerkStdZ", "fBodyGyroStdX",          
                           "fBodyGyroStdY", "fBodyGyroStdZ", "fBodyAccMagStd",          
-                          "fBodyAccJerkMagStd", "fBodyGyroMagStd", "fBodyGyroJerkMag.Std")
+                          "fBodyAccJerkMagStd", "fBodyGyroMagStd", "fBodyGyroJerkMagStd")
 
 ### Step 5: Creates a second, independent tidy data set with the average of each variable for ###
 ### each activity and each subject.                                                           ###
@@ -92,7 +92,7 @@ data2 <- data_small %>%
 
 write.table(data2, file = "E:/3_Getting and Cleaning Data/project_data/tidy_data.txt", row.name = FALSE)
 
-### Step 6: Creating the Code Book ###
+### Step 6: Creating the Code Book Template ###
 
 tidy_data <- read.table("tidy_data.txt", header = TRUE)
 promptData(tidy_data)
