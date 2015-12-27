@@ -1,39 +1,42 @@
-setwd("E:/3_Getting and Cleaning Data/project_data")
 library(dplyr)
 library(tidyr)
+
+### Step 0: After extracting the zipped folder, name the folder project_data. 
+### Remember to set the working directory 
 
 ### Step 1: Merge the training and test sets ###
 
 # extract the column names for the dataset
-featureNames <- read.delim("features.txt", header = FALSE, sep = " ", colClasses = c("NULL",NA))
+featureNames <- read.delim("project_data/features.txt", header = FALSE, sep = " ", colClasses = c("NULL",NA))
 labels <- matrix(unlist(featureNames), ncol = 1)
 valid_labels <- make.names(labels, unique = TRUE, allow_ = TRUE) 
 # make.names removes the duplicates in features.txt
 
 # read the test data and name the columns
-xtest <- tbl_df(read.table("E:/3_Getting and Cleaning Data/project_data/X_test.txt"))
+xtest <- tbl_df(read.table("project_data/test/X_test.txt"))
 colnames(xtest) <- valid_labels
 # read the activities for the test data
-ytest <- tbl_df(read.table("E:/3_Getting and Cleaning Data/project_data/y_test.txt"))
+ytest <- tbl_df(read.table("project_data/test/y_test.txt"))
 ytest <- rename(ytest, activity = V1)
 # read the list of subjects for the test data
-sub_test <- tbl_df(read.table("E:/3_Getting and Cleaning Data/project_data/subject_test.txt"))
+sub_test <- tbl_df(read.table("project_data/test/subject_test.txt"))
 sub_test <- rename(sub_test, subject = V1)
 # put together the test data
 test <- tbl_df(cbind(sub_test, ytest, xtest))
 
 # repeat the above steps to prepare the train data
-xtrain <- tbl_df(read.table("E:/3_Getting and Cleaning Data/project_data/X_train.txt"))
+xtrain <- tbl_df(read.table("project_data/train/X_train.txt"))
 colnames(xtrain) <- valid_labels
-ytrain <- tbl_df(read.table("E:/3_Getting and Cleaning Data/project_data/y_train.txt"))
+ytrain <- tbl_df(read.table("project_data/train/y_train.txt"))
 ytrain <- rename(ytrain, activity = V1)
-sub_train <- tbl_df(read.table("E:/3_Getting and Cleaning Data/project_data/subject_train.txt"))
+sub_train <- tbl_df(read.table("project_data/train/subject_train.txt"))
 sub_train <- rename(sub_train, subject = V1)
 train <- tbl_df(cbind(sub_train, ytrain, xtrain))
 
 # merge the test and train data
 data <- bind_rows(test, train)
 
+# remove data that are no longer required
 rm(featureNames)
 rm(labels)
 rm(xtest)
